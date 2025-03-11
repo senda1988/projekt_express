@@ -1,0 +1,25 @@
+{
+  "name": "projekt_express",
+  "version": "1.0.0",
+  "description": "Einfuehrung Express",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/senda1988/projekt_express.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/senda1988/projekt_express/issues"
+  },
+  "homepage": "https://github.com/senda1988/projekt_express#readme",
+  "dependencies": {
+    "express": "^4.21.2",
+    "nodemon": "^3.1.9"
+  }
+}
