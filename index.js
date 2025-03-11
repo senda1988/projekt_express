@@ -1,18 +1,29 @@
 import express from "express"
-//import path from "path"
+import path from "path"
+import { fileURLToPath } from "url";
+
 
 const app = express()
 
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+app.use(express.static(path.join(__dirname, "public")));
 
 app.get("/", (req, res) => {
     res.send("Hello world!")
 })
 app.get("/content", (req, res) => {
-    res.send("<h1>Content</h1><label>Your Name</label><input placeholder='Enter your Name'> <label>Your Message</label><textarea placeholder='Enter your Message' rows='4' cols='50'>")
+    res.send(`<h1 style='text-align: center; color: red; font-size: 26px; margin: 20px 30px'>Content</h1> <hr>
+        <p style=' padding:30px; margin: 20px 30px;text-align: center; font-size: 18px' >Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. </p>  
+        <img src="/images/node.png" alt="Node.js Logo" style="display: block; margin: 0 auto; width: 200px;">
+          `)
 })
 
+
 app.get("/api/data", (req, res) => {
-    res.json({ fullName: 'Senda', age: 28 })
+    res.json({ fullName: 'Senda Zidi', adresse: "Deutschland" })
 })
 
 
